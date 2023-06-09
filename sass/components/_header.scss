@@ -1,0 +1,45 @@
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  padding: 8rem;
+  justify-content: center;
+  row-gap: 1.5rem;
+  &-logo {
+    height: 3rem;
+    justify-self: center;
+  }
+  &-btn {
+    align-self: start;
+    justify-self: start;
+  }
+  &-seenon--text {
+    color: $color-gray--light-2;
+    text-transform: capitalize;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    column-gap: 1.2rem;
+    font-size: 1.4rem;
+    &::before,
+    &::after {
+      content: "";
+      height: 1.2px;
+      background-color: currentColor;
+      display: block;
+    }
+  }
+  &-seenon--logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    img {
+      max-height: 2.5rem;
+      max-width: 100%;
+      filter: brightness(70%);
+      // display: block;
+    }
+  }
+}

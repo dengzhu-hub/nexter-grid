@@ -1,0 +1,72 @@
+%heading {
+  font-family: $font-dispaly;
+  font-weight: 400;
+}
+.heading-1 {
+  @extend %heading;
+  font-size: 4rem;
+  line-height: 1;
+  color: $color-gray--light-1;
+}
+.heading-2 {
+  @extend %heading;
+  font-size: 4rem;
+  font-style: italic;
+  &__light {
+    color: $color-gray--light-1;
+  }
+  &__dark {
+    color: $color-gray--dark-1;
+  }
+}
+.heading-3 {
+  @extend %heading;
+  font-size: 1.6rem;
+  color: $color-primary;
+  &__light {
+    color: $color-gray--light-1;
+  }
+  &__dark {
+    color: $color-gray--dark-1;
+  }
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.9rem;
+  &__light {
+    color: $color-gray--light-1;
+  }
+  &__dark {
+    color: $color-gray--dark-1;
+  }
+}
+
+.btn {
+  background-color: $color-primary;
+  color: #f2f2f2;
+  font-family: $font-dispaly;
+  font-size: 1.5rem;
+  padding: 1.8rem 3.6rem;
+  letter-spacing: 5px;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    background-color: $color-primary--dark;
+  }
+}
+
+.ms {
+  margin-bottom: $margin-bottom--small;
+}
+.mm {
+  margin-bottom: $margin-bottom--medium;
+}
+.ml {
+  margin-bottom: $margin-bottom--large;
+}
+.mh {
+  margin-bottom: $margin-bottom--huge;
+}

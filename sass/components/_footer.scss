@@ -1,0 +1,32 @@
+.nav {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+
+  &-item {
+  }
+  &-link {
+    &:link,
+    &:visited {
+      font-size: 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 1.6rem;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    &:hover,
+    &:active {
+      background-color: rgba(#fff, 0.05);
+      transform: translateY(-3px);
+    }
+  }
+}
+.copyright {
+    font-size: 1.5rem;
+    color: $color-gray--light-2;
+    text-align: center;
+    margin-top: 6rem;
+}

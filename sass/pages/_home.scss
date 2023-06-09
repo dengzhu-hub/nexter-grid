@@ -1,0 +1,99 @@
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end]
+    minmax(6rem, 1fr) [full-end];
+  grid-auto-rows: 100px;
+  @include query(bg-large) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr)
+      [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end]
+      minmax(6rem, 1fr) [full-end];
+  }
+  @include query(bg-big) {
+    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(
+        3,
+        min-content
+      );
+  }
+}
+.sidebar {
+  background-color: #e67700;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1;
+  display: flex;
+  justify-content: center;
+  @include query(bg-large) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+.header {
+  background-color: #a61e4d;
+  grid-column: full-start / col-end 6;
+  @include query(bg-big) {
+    grid-column: 1 / -1;
+  }
+  background-image: linear-gradient(
+      rgba($color-secondary, 0.9),
+      rgba($color-secondary, 0.9)
+    ),
+    url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+.realtors {
+  background-color: $color-secondary;
+  grid-column: col-start 7 / full-end;
+  @include query(bg-big) {
+    grid-column: 1 / -1;
+  }
+}
+.features {
+  grid-column: center-start / center-end;
+}
+
+.story {
+  &-picture {
+    // background-color: #087f5b;
+    background-image: linear-gradient(
+        rgba($color-primary, 0.5),
+        rgba($color-primary--dark, 0.5)
+      ),
+      url(../img/back.jpg);
+    grid-column: full-start / col-end 4;
+  }
+  &-content {
+    // background-color: #b2b2b2;
+    grid-column: col-start 5 / full-end;
+    padding: 6rem 8vw;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    display: grid;
+    align-content: center;
+    justify-items: start;
+  }
+}
+.homes {
+  // background-color: #3b5bdb;
+  grid-column: center-start / center-end;
+}
+.gallery {
+  // background-color: #5f3d4c;
+  grid-column: full-start / full-end;
+}
+.footer {
+  background-color: $color-secondary;
+  grid-column: full-start / full-end;
+  padding: 8rem;
+  // margin: 12rem;
+}
